@@ -136,7 +136,7 @@ body {
 .thumbnail {
   width: 100%;
   border-radius: 5px;
-  width: 20%;
+  width: 18%;
   transition: all 0.2s ease-in;
 }
 
