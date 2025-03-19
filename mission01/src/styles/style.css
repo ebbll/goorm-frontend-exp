@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "NetflixSans-Regular";
+  src: url("/src/fonts/NetflixSans-Regular.otf");
+}
+
+:root {
+  font-family: "NetflixSans-Regular";
+  font-size: medium;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: black;
+}
+
+body {
+  margin: 0 0 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  height: min-content;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  margin: 20px 0px;
+}
+
+.logo-image {
+  width: 120px;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-item {
+  align-content: center;
+}
+
+.main-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.billboard {
+  position: relative;
+  margin: 0px;
+  display: flex;
+}
+
+.billboard-poster-img {
+  width: 100%;
+}
+
+.billboard-content {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  width: 400px;
+}
+
+.billboard-button-wrapper {
+  margin: 20px 0px 0px 0px;
+  gap: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.recommend {
+  margin: 10px 0px 0px 0px;
+  width: 100%;
+}
+
+.thumb-container {
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.thumbnail {
+  width: 100%;
+  border-radius: 10px;
+  width: 20%;
+}
+
+.thumbnail:hover {
+  transition: all 0.3s linear;
+  transform: scale(1.8);
+}
+
+footer {
+  color: grey;
+  margin: 80px 130px 0px 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: x-small;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 40px 40px 40px;
+  font-size: small;
+}
+
+.my-info {
+  text-align: center;
+}
