@@ -68,18 +68,46 @@ body {
   width: 100%;
 }
 
-.billboard-content {
+.billboard-card {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 20px;
   width: 400px;
 }
 
+.billboard-title {
+  font-size: x-large;
+}
+
 .billboard-button-wrapper {
   margin: 20px 0px 0px 0px;
-  gap: 50px;
+  gap: 30px;
   display: flex;
   flex-direction: row;
+}
+
+.billboard-btn {
+  height: 40px;
+  font-size: large;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.billboard-btn:hover {
+  opacity: 70%;
+}
+
+.play-btn {
+  width: 80px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.807);
+}
+
+.info-btn {
+  width: 120px;
+  color: white;
+  background-color: rgba(89, 89, 89, 0.807);
 }
 
 .recommend {
@@ -97,10 +125,10 @@ body {
   width: 100%;
   border-radius: 10px;
   width: 20%;
+  transition: all 0.2s ease-in;
 }
 
 .thumbnail:hover {
-  transition: all 0.3s linear;
   transform: scale(1.8);
 }
 
