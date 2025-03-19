@@ -1,0 +1,70 @@
+:root {
+  font-family: "Noto Serif KR", sans-serif;
+  font-size: medium;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: darkslategray;
+  background-color: rgba(192, 199, 192, 0.677);
+}
+
+body {
+  margin: 10vh auto;
+  width: 100%;
+  max-width: 600px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: white;
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.title {
+  font-size: x-large;
+}
+
+.create-btn {
+  font-size: small;
+  text-align: center;
+
+  width: 100px;
+  height: 30px;
+  background-color: rgba(192, 199, 192, 0.797);
+  border: none;
+  border-radius: 5px;
+
+  transition: all 0.1s linear;
+}
+
+.create-btn:hover {
+  opacity: 70%;
+}
+
+.todo-list {
+  background-color: rgba(192, 199, 192, 0.797);
+  height: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-item {
+  margin: 10px;
+}
+
+footer {
+  background-color: white;
+  font-size: small;
+  text-align: center;
+  padding: 10px;
+}
