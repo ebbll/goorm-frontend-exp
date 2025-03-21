@@ -79,6 +79,14 @@ function createTodoElement(item) {
     saveToLocalStorage();
   });
 
+  inputElement.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      inputElement.setAttribute("disabled", "");
+      inputElement.blur();
+      saveToLocalStorage();
+    }
+  });
+
   editBtnElement.addEventListener("click", () => {
     inputElement.removeAttribute("disabled");
     inputElement.focus();
