@@ -1,5 +1,5 @@
 :root {
-  font-family: "Noto Serif KR", sans-serif;
+  /* font-family: "Noto Serif KR", sans-serif; */
   font-size: medium;
   line-height: 1.5;
   font-weight: 400;
@@ -9,9 +9,9 @@
 }
 
 body {
-  margin: 10vh auto;
-  width: 100%;
-  max-width: 600px;
+  margin: 5vh auto;
+  width: 60vw;
+  min-width: 600px;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
@@ -26,21 +26,28 @@ header {
   justify-content: space-between;
   padding: 20px;
   align-items: center;
+
+  border-radius: 10px 10px 0 0;
 }
 
 .title {
   font-size: x-large;
+  font-weight: 700;
+  align-items: center;
+  height: 40px;
+  line-height: 40px;
 }
 
 .create-btn {
   font-size: small;
   text-align: center;
 
-  width: 100px;
-  height: 30px;
-  background-color: rgba(192, 199, 192, 0.797);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(62, 65, 62, 0.797);
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
 
   transition: all 0.1s linear;
 }
@@ -51,15 +58,64 @@ header {
 
 .todo-list {
   background-color: rgba(192, 199, 192, 0.797);
-  height: 60vh;
+  height: 70vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 30px;
 }
 
 .todo-item {
+  width: 40vw;
+  min-width: 440px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
   margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(224, 232, 224, 0.821);
+  gap: 20px;
+}
+
+.todo-text {
+  min-width: 15rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(62, 65, 62, 0.797);
+  color: white;
+  font-size: medium;
+  font-weight: 400;
+  padding-left: 10px;
+}
+
+.complete .todo-text {
+  text-decoration: line-through;
+  text-decoration-color: rgba(62, 65, 62, 0.797);
+  text-decoration-thickness: 2px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.action-btn {
+  background-color: rgba(119, 124, 119, 0.797);
+  color: white;
+  border: none;
+  border-radius: 5px;
+
+  width: 4rem;
+  height: 2rem;
+  transition: all 0.1s linear;
+}
+
+.action-btn:hover {
+  opacity: 70%;
 }
 
 footer {
@@ -67,4 +123,5 @@ footer {
   font-size: small;
   text-align: center;
   padding: 10px;
+  border-radius: 0 0 10px 10px;
 }
