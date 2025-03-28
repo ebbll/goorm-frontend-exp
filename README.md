@@ -1,4 +1,4 @@
-# Netflix 클론 코딩
+# Netflix Mockup
 
 <img width="1502" alt="Image" src="https://github.com/user-attachments/assets/31b6377d-b82f-4867-a88b-045e616554e3" />
 
