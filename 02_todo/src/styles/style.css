@@ -118,10 +118,63 @@ header {
   opacity: 70%;
 }
 
+.edit-btn {
+  background-color: rgba(160, 191, 236, 0.797);
+  color: black;
+}
+
+.remove-btn {
+  background-color: rgba(237, 165, 165, 0.797);
+  color: black;
+}
+
 footer {
   background-color: white;
   font-size: small;
   text-align: center;
   padding: 10px;
   border-radius: 0 0 10px 10px;
+}
+
+/* 반응형 추가 */
+@media (max-width: 768px) {
+  body {
+    width: 90vw;
+    min-width: unset;
+  }
+
+  .todo-item {
+    width: 80vw;
+    min-width: unset;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .todo-text {
+    width: 100%;
+  }
+
+  .actions {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: large;
+  }
+
+  .create-btn {
+    width: 35px;
+    height: 35px;
+    font-size: smaller;
+  }
+
+  .action-btn {
+    width: 3rem;
+    height: 1.8rem;
+    font-size: smaller;
+  }
 }
