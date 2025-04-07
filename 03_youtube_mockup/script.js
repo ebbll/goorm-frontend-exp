@@ -93,7 +93,7 @@ function displayVideos(filteredVideos = videos) {
     .join("");
 }
 
-// 검색 기능
+// 검색
 function filterVideos(keyword) {
   if (!keyword.trim()) {
     return videos;
@@ -101,7 +101,7 @@ function filterVideos(keyword) {
   return videos.filter((video) => video.title.includes(keyword));
 }
 
-// 드래그 스크롤 기능
+// 드래그 스크롤
 const scrollContainer = document.querySelector(".contents-menu");
 let isDown = false;
 let startX;
@@ -128,7 +128,7 @@ scrollContainer.addEventListener("mousemove", (e) => {
   if (!isDown) return;
   e.preventDefault();
   const x = e.pageX - scrollContainer.offsetLeft;
-  const walk = (x - startX) * 1.5; // 스크롤 속도 조절
+  const walk = (x - startX) * 1.5;
   scrollContainer.scrollLeft = scrollLeft - walk;
 });
 
