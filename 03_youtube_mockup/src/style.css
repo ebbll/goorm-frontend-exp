@@ -1,5 +1,5 @@
 :root {
-  /* font-family: "Noto Serif KR", sans-serif; */
+  font-family: "Noto Serif KR", sans-serif;
   font-size: medium;
   line-height: 1.5;
   font-weight: 400;
@@ -11,7 +11,6 @@
 body {
   margin: auto;
   width: 100%;
-  /* min-width: 656px; */
   min-height: 80vh;
   display: flex;
   overflow: auto;
@@ -22,7 +21,6 @@ button:hover {
   cursor: pointer;
 }
 
-/* 헤더 */
 header {
   background-color: white;
   text-align: center;
@@ -87,14 +85,13 @@ header {
   height: 40px;
   line-height: 40px;
   background-color: rgba(62, 65, 62, 0);
-  align-items: center;
-  justify-content: center;
 }
 
 .home-image {
   margin: auto;
   width: 90%;
   background-color: none;
+  vertical-align: middle;
 }
 
 .search-bar {
@@ -141,6 +138,11 @@ header {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  border-radius: 20px;
+}
+
+.user-button:hover {
+  background-color: rgb(232, 232, 232);
 }
 
 .user-button-icon {
@@ -150,9 +152,6 @@ header {
 }
 
 main {
-  /* max-width: 1280px; */
-  /* margin: auto; */
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -202,8 +201,7 @@ main {
   flex-grow: 1;
   height: calc(100vh - 60px);
   padding: 10px;
-  margin-left: 200px;
-  /* gap: 10px; */
+  padding-left: 200px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -213,27 +211,43 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  /* background-color: yellowgreen; */
   padding: 3px 10px;
   gap: 10px;
   overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+
+  align-items: center;
+  height: 40px;
+  min-height: 40px;
+}
+
+.contents-menu::-webkit-scrollbar {
+  display: none;
 }
 
 .contents-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   white-space: nowrap;
   background-color: rgb(236, 236, 236);
   padding: 8px 10px;
+  height: 33px;
+  line-height: 33px;
   border: none;
   border-radius: 10px;
 }
 
 .contents-button:hover {
-  transition: all 1s;
-  filter: brightness(0.6);
+  transition: all 0.5s;
+  filter: brightness(0.8);
 }
 
 .video-contents {
-  flex-grow: 1; /* (가변 크기) */
+  flex-grow: 1;
   min-height: 400px;
   padding: 10px;
 }
@@ -280,4 +294,33 @@ main {
   margin: 0;
   font-size: 0.9rem;
   color: #606060;
+}
+
+@media (min-width: 1300px) {
+  .video-contents {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .search-bar {
+    width: 70vw;
+  }
+
+  .contents-container {
+    padding-left: 0;
+  }
+
+  .video-contents {
+    grid-template-columns: 1fr;
+  }
+
+  .contents-button {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
 }
