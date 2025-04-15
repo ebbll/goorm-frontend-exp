@@ -5,7 +5,9 @@
   font-weight: 400;
 
   color: darkslategray;
-  background-color: rgba(192, 199, 192, 0.677);
+  background-color: rgba(31, 33, 31, 0.821);
+
+  /* background-color: rgba(192, 199, 192, 0.677); */
 }
 
 body {
@@ -38,23 +40,48 @@ header {
   line-height: 40px;
 }
 
-.create-btn {
+.menu-btns {
+  display: flex;
+  flex-direction: row;
+
+  gap: 20px;
+}
+
+.create-btn,
+.sort-btn,
+.filter-btn {
   font-size: small;
   text-align: center;
 
   width: 40px;
   height: 40px;
   background-color: rgba(62, 65, 62, 0.797);
-  color: white;
+  color: darkslategray;
   border: none;
   border-radius: 20px;
 
   transition: all 0.1s linear;
+
+  border-radius: 50px;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 4px 4px 8px #d9d9d9, -4px -4px 8px #ffffff;
 }
 
-.create-btn:hover {
+.create-btn:hover,
+.sort-btn:hover,
+.filter-btn:hover {
   opacity: 70%;
 }
+/* 
+.create-btn {
+  background-color: rgba(114, 172, 114, 0.797);
+}
+.sort-btn {
+  background-color: rgba(100, 105, 100, 0.797);
+}
+.filter-btn {
+  background-color: rgba(100, 105, 100, 0.797);
+} */
 
 .todo-list {
   background-color: rgba(192, 199, 192, 0.797);
@@ -64,11 +91,13 @@ header {
   flex-direction: column;
   align-items: center;
   padding: 30px;
+
+  overflow: scroll;
 }
 
 .todo-item {
-  width: 40vw;
-  min-width: 440px;
+  width: 30rem;
+  /* min-width: 440px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -76,8 +105,24 @@ header {
   margin: 10px;
   padding: 20px;
   border-radius: 10px;
-  background-color: rgba(224, 232, 224, 0.821);
+  /* background-color: rgba(224, 232, 224, 0.821); */
+  background-color: rgba(31, 33, 31, 0.821);
   gap: 20px;
+}
+
+[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: red;
+}
+
+.star-btn {
+  background-color: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+  font-size: x-large;
+  color: gold;
 }
 
 .todo-text {
@@ -109,8 +154,8 @@ header {
   border: none;
   border-radius: 5px;
 
-  width: 4rem;
-  height: 2rem;
+  width: 50px;
+  height: 30px;
   transition: all 0.1s linear;
 }
 
@@ -119,12 +164,12 @@ header {
 }
 
 .edit-btn {
-  background-color: rgba(160, 191, 236, 0.797);
+  background-color: rgba(129, 164, 215, 0.997);
   color: black;
 }
 
 .remove-btn {
-  background-color: rgba(237, 165, 165, 0.797);
+  background-color: rgba(230, 127, 127, 0.997);
   color: black;
 }
 

@@ -1,10 +1,15 @@
 const list = document.getElementById("list");
 const createBtn = document.getElementById("create-btn");
+const filterBtn = document.getElementById("filter-btn");
+const sortBtn = document.getElementById("sort-btn");
 
 let todos = [];
+let currentFilter = "all"; // all, completed, uncompleted, starred
+let sortDirection = "desc"; // desc, asc
 
 createBtn.addEventListener("click", createNewTodo);
-
+filterBtn.addEventListener("click", filterTodos);
+sortBtn.addEventListener("click", sortTodos);
 document.addEventListener("DOMContentLoaded", loadFromLocalStorage);
 
 function createNewTodo() {
@@ -16,30 +21,77 @@ function createNewTodo() {
 
   todos.unshift(item);
 
-  const { itemElement, inputElement, editBtnElement, removeBtnElement } =
-    createTodoElement(item);
+  const { itemElement } = createTodoElement(item);
 
   list.prepend(itemElement);
 
-  inputElement.removeAttribute("disabled");
-
-  inputElement.focus();
-
   saveToLocalStorage();
+  updateListDisplay();
+}
+
+function filterTodos() {
+  // Toggle filter state
+  if (currentFilter === "all") {
+    currentFilter = "completed";
+    filterBtn.innerText = "✔️";
+  } else if (currentFilter === "completed") {
+    currentFilter = "uncompleted";
+    filterBtn.innerText = "❌";
+  } else if (currentFilter === "uncompleted") {
+    currentFilter = "starred";
+    filterBtn.innerText = "⭐";
+  } else {
+    currentFilter = "all";
+    filterBtn.innerText = "전체";
+  }
+
+  updateListDisplay();
+}
+
+function sortTodos() {
+  // Toggle sort direction
+  sortDirection = sortDirection === "desc" ? "asc" : "desc";
+  sortBtn.innerText = sortDirection === "desc" ? "⬇" : "⬆";
+
+  todos.sort((a, b) => {
+    return sortDirection === "desc" ? b.id - a.id : a.id - b.id;
+  });
+
+  updateListDisplay();
+}
+
+function updateListDisplay() {
+  list.innerHTML = "";
+
+  todos
+    .filter((item) => {
+      if (currentFilter === "completed") return item.complete;
+      if (currentFilter === "uncompleted") return !item.complete;
+      if (currentFilter === "starred") return item.starred;
+      return true; // all
+    })
+    .forEach((item) => {
+      const { itemElement } = createTodoElement(item);
+      list.append(itemElement);
+    });
 }
 
 function createTodoElement(item) {
   const itemElement = document.createElement("div");
   itemElement.classList.add("todo-item");
 
+  if (item.complete) {
+    itemElement.classList.add("complete");
+  }
+  // 추가
+  if (item.starred) {
+    itemElement.classList.add("starred");
+  }
+
   const checkboxElement = document.createElement("input");
   checkboxElement.type = "checkbox";
   checkboxElement.classList.add("todo-check");
   checkboxElement.checked = item.complete;
-
-  if (item.complete) {
-    itemElement.classList.add("complete");
-  }
 
   const inputElement = document.createElement("input");
   inputElement.type = "text";
@@ -50,6 +102,11 @@ function createTodoElement(item) {
   const actionsElement = document.createElement("div");
   actionsElement.classList.add("actions");
 
+  // 추가
+  const starBtnElement = document.createElement("button");
+  starBtnElement.classList.add("star-btn");
+  starBtnElement.innerText = item.starred ? "★" : "☆";
+
   const editBtnElement = document.createElement("button");
   editBtnElement.classList.add("edit-btn", "action-btn");
   editBtnElement.innerText = "수정";
@@ -58,15 +115,17 @@ function createTodoElement(item) {
   removeBtnElement.classList.add("remove-btn", "action-btn");
   removeBtnElement.innerText = "삭제";
 
+  starBtnElement.addEventListener("click", () => {
+    item.starred = !item.starred;
+    starBtnElement.innerText = item.starred ? "★" : "☆";
+    saveToLocalStorage();
+    updateListDisplay();
+  });
+
   checkboxElement.addEventListener("change", () => {
     item.complete = checkboxElement.checked;
-
-    if (item.complete) {
-      itemElement.classList.add("complete");
-    } else {
-      itemElement.classList.remove("complete");
-    }
     saveToLocalStorage();
+    updateListDisplay();
   });
 
   inputElement.addEventListener("blur", () => {
@@ -82,7 +141,6 @@ function createTodoElement(item) {
   inputElement.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       inputElement.setAttribute("disabled", "");
-      inputElement.blur();
       saveToLocalStorage();
     }
   });
@@ -94,25 +152,23 @@ function createTodoElement(item) {
 
   removeBtnElement.addEventListener("click", () => {
     todos = todos.filter((t) => t.id !== item.id);
-
-    itemElement.remove();
     saveToLocalStorage();
+    updateListDisplay();
   });
 
   actionsElement.append(editBtnElement);
   actionsElement.append(removeBtnElement);
 
   itemElement.append(checkboxElement);
+  itemElement.append(starBtnElement);
   itemElement.append(inputElement);
   itemElement.append(actionsElement);
 
-  return { itemElement, inputElement, editBtnElement, removeBtnElement };
+  return { itemElement };
 }
 
 function saveToLocalStorage() {
-  const data = JSON.stringify(todos);
-
-  window.localStorage.setItem("my_todos", data);
+  window.localStorage.setItem("my_todos", JSON.stringify(todos));
 }
 
 function loadFromLocalStorage() {
@@ -120,11 +176,6 @@ function loadFromLocalStorage() {
 
   if (data) {
     todos = JSON.parse(data);
-
-    todos.forEach((item) => {
-      const { itemElement } = createTodoElement(item);
-
-      list.append(itemElement);
-    });
+    updateListDisplay();
   }
 }
