@@ -33,7 +33,7 @@ function filterTodos() {
   // Toggle filter state
   if (currentFilter === "all") {
     currentFilter = "completed";
-    filterBtn.innerText = "✔️";
+    filterBtn.innerText = "✅";
   } else if (currentFilter === "completed") {
     currentFilter = "uncompleted";
     filterBtn.innerText = "❌";
