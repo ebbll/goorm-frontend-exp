@@ -4,7 +4,11 @@
   font-weight: 400;
 
   color: darkslategray;
-  background-color: rgba(31, 33, 31, 0.821);
+  /* background-color: rgba(32, 33, 31, 0.821); */
+
+  --main-dark-color: rgba(57, 55, 59, 0.821);
+  --main-point-color: rgba(160, 154, 169, 0.821);
+  --main-light-color: rgb(249, 240, 219);
 }
 
 body {
@@ -17,7 +21,9 @@ body {
 }
 
 header {
-  background-color: white;
+  /* background-color: white; */
+  background-color: var(--main-dark-color);
+  color: var(--main-light-color);
   text-align: center;
 
   display: flex;
@@ -25,6 +31,8 @@ header {
   justify-content: space-between;
   padding: 20px;
   align-items: center;
+  height: 40px;
+  line-height: 40px;
 
   border-radius: 10px 10px 0 0;
 }
@@ -40,7 +48,6 @@ header {
 .menu-btns {
   display: flex;
   flex-direction: row;
-
   gap: 20px;
 }
 
@@ -50,28 +57,25 @@ header {
   font-size: small;
   text-align: center;
 
+  font-weight: 700;
+  line-height: 40px;
   width: 40px;
   height: 40px;
-  background-color: rgba(62, 65, 62, 0.797);
   color: darkslategray;
+  background-color: var(--main-light-color);
   border: none;
   border-radius: 20px;
-
-  transition: all 0.1s linear;
-
-  border-radius: 50px;
-  background: linear-gradient(145deg, #e6e6e6, #ffffff);
-  box-shadow: 4px 4px 8px #d9d9d9, -4px -4px 8px #ffffff;
 }
 
 .create-btn:hover,
 .sort-btn:hover,
 .filter-btn:hover {
-  opacity: 70%;
+  filter: brightness(0.7);
+  transition: all 0.1s linear;
 }
 
 .todo-list {
-  background-color: rgba(192, 199, 192, 0.797);
+  background-color: var(--main-light-color);
   height: 70vh;
 
   display: flex;
@@ -80,6 +84,10 @@ header {
   padding: 30px;
 
   overflow: scroll;
+}
+
+.todo-list::-webkit-scrollbar {
+  display: none;
 }
 
 .todo-item {
@@ -91,7 +99,7 @@ header {
   margin: 10px;
   padding: 20px;
   border-radius: 10px;
-  background-color: rgba(31, 33, 31, 0.821);
+  background-color: var(--main-point-color);
   gap: 20px;
 }
 
@@ -114,10 +122,10 @@ header {
   min-width: 15rem;
   border: none;
   border-radius: 5px;
-  background-color: rgba(62, 65, 62, 0.797);
+  background-color: rgba(135, 132, 138, 0.797);
   color: white;
   font-size: medium;
-  font-weight: 400;
+  font-weight: 300;
   padding-left: 10px;
 }
 
@@ -134,13 +142,13 @@ header {
 }
 
 .action-btn {
-  background-color: rgba(119, 124, 119, 0.797);
-  color: white;
+  color: var(--main-dark-color);
   border: none;
   border-radius: 5px;
 
   width: 50px;
   height: 30px;
+  line-height: 30px;
   transition: all 0.1s linear;
 }
 
@@ -149,17 +157,16 @@ header {
 }
 
 .edit-btn {
-  background-color: rgba(129, 164, 215, 0.997);
-  color: black;
+  background-color: rgba(160, 191, 237, 0.997);
 }
 
 .remove-btn {
-  background-color: rgba(230, 127, 127, 0.997);
-  color: black;
+  background-color: rgba(251, 175, 175, 0.997);
 }
 
 footer {
-  background-color: white;
+  background-color: var(--main-dark-color);
+  color: var(--main-light-color);
   font-size: small;
   text-align: center;
   padding: 10px;
