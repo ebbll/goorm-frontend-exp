@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/youtube_fav.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Youtube Mockup</title>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <!-- 메뉴 -->
+      <div class="logo-section header-item">
+        <button class="menu-button">
+          <img
+            class="menu-button-icon"
+            src="/src/assets/icons/menu-burger.png"
+          />
+        </button>
+        <!-- 로고 -->
+        <button class="home-button">
+          <img
+            class="home-image"
+            src="/src/assets/youtube_logo.png"
+            alt="YouTube Logo"
+          />
+        </button>
+      </div>
+      <!-- 검색 -->
+      <div class="search-bar header-item">
+        <input class="search-input" type="text" placeholder="검색" />
+        <button class="search-button">
+          <img
+            class="search-button-icon"
+            src="/src/assets/icons/search.png"
+            alt="Search"
+          />
+        </button>
+      </div>
+      <!-- 유저 프로필 -->
+      <button class="user-button header-item">
+        <img
+          class="user-button-icon"
+          src="/src/assets/icons/user.png"
+          alt="User"
+        />
+      </button>
+    </header>
+    <!-- 메인 -->
+    <main>
+      <!-- 사이드바 -->
+      <div class="sidebar">
+        <button class="sidebar-button">
+          <img
+            class="sidebar-button-icon"
+            src="/src/assets/icons/home.png"
+            alt="Home"
+          />
+          <div>홈</div>
+        </button>
+        <button class="sidebar-button">
+          <img
+            class="sidebar-button-icon"
+            src="/src/assets/icons/shorts.png"
+            alt="Shorts"
+          />
+          <div>Shorts</div>
+        </button>
+        <button class="sidebar-button">
+          <img
+            class="sidebar-button-icon"
+            src="/src/assets/icons/subscription.png"
+            alt="Subscriptions"
+          />
+          <div>구독</div>
+        </button>
+        <button class="sidebar-button">
+          <img
+            class="sidebar-button-icon"
+            src="/src/assets/icons/history.png"
+            alt="History"
+          />
+          <div>시청 기록</div>
+        </button>
+        <button class="sidebar-button">
+          <img
+            class="sidebar-button-icon"
+            src="/src/assets/icons/library.png"
+            alt="Library"
+          />
+          <span>재생 목록</span>
+        </button>
+      </div>
+      <!-- 컨텐츠 -->
+      <div class="contents-container">
+        <!-- 상단 카테고리 메뉴 -->
+        <div class="contents-menu">
+          <button class="contents-button">전체</button>
+          <button class="contents-button">음악</button>
+          <button class="contents-button">분장</button>
+          <button class="contents-button">게임</button>
+          <button class="contents-button">믹스</button>
+          <button class="contents-button">라이브</button>
+          <button class="contents-button">뷰티 팁</button>
+          <button class="contents-button">반려동물</button>
+          <button class="contents-button">애니메이션</button>
+        </div>
+        <!-- 비디오가 표시될 영역 -->
+        <div class="video-contents"></div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
