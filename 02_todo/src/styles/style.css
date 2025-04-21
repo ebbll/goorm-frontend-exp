@@ -67,6 +67,10 @@ header {
   border-radius: 20px;
 }
 
+.create-btn {
+  background-color: rgba(130, 210, 135, 0.997);
+}
+
 .create-btn:hover,
 .sort-btn:hover,
 .filter-btn:hover {
@@ -106,7 +110,7 @@ header {
 [type="checkbox"] {
   width: 20px;
   height: 20px;
-  accent-color: red;
+  accent-color: rgba(255, 255, 255, 1);
 }
 
 .star-btn {
@@ -125,7 +129,7 @@ header {
   background-color: rgba(135, 132, 138, 0.797);
   color: white;
   font-size: medium;
-  font-weight: 300;
+  font-weight: 500;
   padding-left: 10px;
 }
 
