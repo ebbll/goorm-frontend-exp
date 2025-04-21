@@ -9,7 +9,10 @@ nav {
   align-items: center;
 }
 
-.nav_black .nav_logo {
+.nav_black {
+}
+
+.nav_logo {
   margin: 10px 20px;
   width: 100px;
   height: 40px;
