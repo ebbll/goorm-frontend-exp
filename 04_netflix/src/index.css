@@ -1,0 +1,27 @@
+:root {
+  font-family: "Noto Serif KR", sans-serif;
+  font-size: medium;
+
+  color: white;
+  background-color: black;
+}
+
+body {
+  margin: 0;
+}
+
+@media (min-width: 500px) {
+  /* 썸네일 가로 3개 */
+}
+
+@media (min-width: 800px) {
+  /* 썸네일 가로 4개 */
+}
+
+@media (min-width: 885px) {
+  /* nav 확장 */
+}
+
+@media (min-width: 1100px) {
+  /* 썸네일 가로 5개 */
+}
