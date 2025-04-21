@@ -5,41 +5,8 @@ import Nav from "./components/Nav";
 function App() {
   return (
     <div className="app">
-      <Nav className={`nav ${show && "nav_black"}`} />
+      <Nav />
 
-      <section class="recommend">
-        <div class="recommend-theme">회원님을 위해 엄선한 오늘의 콘텐츠</div>
-        <div class="thumb-container">
-          <img class="thumbnail" src="/src/assets/thumb1.png" />
-          <img class="thumbnail" src="/src/assets/thumb2.png" />
-          <img class="thumbnail" src="/src/assets/thumb3.png" />
-          <img class="thumbnail" src="/src/assets/thumb4.png" />
-          <img class="thumbnail" src="/src/assets/thumb5.png" />
-          <img class="thumbnail" src="/src/assets/thumb6.png" />
-        </div>
-      </section>
-      <section class="recommend">
-        <div class="recommend-theme">은지 님이 시청 중인 콘텐츠</div>
-        <div class="thumb-container">
-          <img class="thumbnail" src="/src/assets/thumb1.png" />
-          <img class="thumbnail" src="/src/assets/thumb2.png" />
-          <img class="thumbnail" src="/src/assets/thumb3.png" />
-          <img class="thumbnail" src="/src/assets/thumb4.png" />
-          <img class="thumbnail" src="/src/assets/thumb5.png" />
-          <img class="thumbnail" src="/src/assets/thumb6.png" />
-        </div>
-      </section>
-      <section class="recommend">
-        <div class="recommend-theme">드라마</div>
-        <div class="thumb-container">
-          <img class="thumbnail" src="/src/assets/thumb1.png" />
-          <img class="thumbnail" src="/src/assets/thumb2.png" />
-          <img class="thumbnail" src="/src/assets/thumb3.png" />
-          <img class="thumbnail" src="/src/assets/thumb4.png" />
-          <img class="thumbnail" src="/src/assets/thumb5.png" />
-          <img class="thumbnail" src="/src/assets/thumb6.png" />
-        </div>
-      </section>
       <footer>
         <div class="footer-grid">
           <div>화면 해설</div>
