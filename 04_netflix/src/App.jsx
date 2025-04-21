@@ -1,14 +1,15 @@
 import "./App.css";
-import "./temp.css";
+import Banner from "./components/Banner";
 import Nav from "./components/Nav";
 
 function App() {
   return (
     <div className="app">
       <Nav />
+      <Banner />
 
       <footer>
-        <div class="footer-grid">
+        <div className="footer-grid">
           <div>화면 해설</div>
           <div>고객 센터</div>
           <div>기프트카드</div>
@@ -22,7 +23,7 @@ function App() {
           <div>회사 정보</div>
           <div>문의하기</div>
         </div>
-        <div class="footer-info">
+        <div className="footer-info">
           <div>
             넷플릭스서비시스코리아 유한회사 통신판매업신고번호:
             제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)
@@ -37,7 +38,6 @@ function App() {
           <div>클라우드 호스팅: Amazon Web Services Inc.</div>
           <div>공정거래위원회 웹사이트</div>
         </div>
-        <div class="my-info">2025-03-19 @Eunji Lee</div>
       </footer>
     </div>
   );
