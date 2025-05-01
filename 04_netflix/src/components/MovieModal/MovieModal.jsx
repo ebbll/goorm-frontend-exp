@@ -27,20 +27,20 @@ export default function MovieModal({
           </span>
 
           <img
-            className="modal__poster-img"
+            className="modal_poster-img"
             src={`https://image.tmdb.org/t/p/original/${backdrop_path}`}
             alt="modal__poster-img"
           />
 
-          <div className="modal__content">
-            <p className="modal__details">
+          <div className="modal_content">
+            <p className="modal_details">
               <span className="modal__user_perc">100% for you</span>{" "}
               {release_date ? release_date : first_air_date}
             </p>
 
-            <h2 className="modal__title">{title ? title : name}</h2>
-            <p className="modal__overview"> 평점: {vote_average}</p>
-            <p className="modal__overview"> {overview}</p>
+            <h2 className="modal_title">{title ? title : name}</h2>
+            <p className="modal_overview"> 평점: {vote_average}</p>
+            <p className="modal_overview"> {overview}</p>
           </div>
         </div>
       </div>
