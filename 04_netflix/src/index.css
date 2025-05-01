@@ -3,25 +3,25 @@
   font-size: medium;
 
   color: white;
-  background-color: black;
 }
 
 body {
+  background-color: rgb(20, 20, 20);
   margin: 0;
 }
 
 @media (min-width: 500px) {
-  /* 썸네일 가로 3개 */
+  /* 썸네일 가로 3개로 확장 */
 }
 
 @media (min-width: 800px) {
-  /* 썸네일 가로 4개 */
+  /* 썸네일 가로 4개로 확장 */
 }
 
 @media (min-width: 885px) {
-  /* nav 확장 */
+  /* 상단 nav bar 확장 */
 }
 
 @media (min-width: 1100px) {
-  /* 썸네일 가로 5개 */
+  /* 썸네일 가로 5개로 확장 */
 }
