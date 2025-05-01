@@ -1,44 +1,42 @@
 import "./App.css";
 import Banner from "./components/Banner";
 import Nav from "./components/Nav";
+import Row from "./components/Row";
+import requests from "./api/request";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="app">
       <Nav />
       <Banner />
-
-      <footer>
-        <div className="footer-grid">
-          <div>화면 해설</div>
-          <div>고객 센터</div>
-          <div>기프트카드</div>
-          <div>미디어 센터</div>
-          <div>투자 정보(IR)</div>
-          <div>입사 정보</div>
-          <div>이용 약관</div>
-          <div>개인정보</div>
-          <div>법적 고지</div>
-          <div>쿠키 설정</div>
-          <div>회사 정보</div>
-          <div>문의하기</div>
-        </div>
-        <div className="footer-info">
-          <div>
-            넷플릭스서비시스코리아 유한회사 통신판매업신고번호:
-            제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)
-          </div>
-          <div>대표: 레지널드 숀 톰프슨</div>
-          <div>이메일 주소: korea@netflix.com</div>
-          <div>
-            주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층
-            우편번호 03161
-          </div>
-          <div>사업자등록번호: 165-87-00119</div>
-          <div>클라우드 호스팅: Amazon Web Services Inc.</div>
-          <div>공정거래위원회 웹사이트</div>
-        </div>
-      </footer>
+      <Row
+        title="넷플릭스 오리지널"
+        id="NO"
+        fetchUrl={requests.fetchNetflixOriginals}
+      />
+      <Row
+        title="오늘 전 세계의 TOP 10 시리즈"
+        id="TN"
+        fetchUrl={requests.fetchTrending}
+      />
+      <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTopRated} />
+      <Row
+        title="무료한 당신을 위한 액션 영화"
+        id="AM"
+        fetchUrl={requests.fetchActionMovies}
+      />
+      <Row
+        title="어워드 수상 코미디 영화"
+        id="CM"
+        fetchUrl={requests.fetchComedyMovies}
+      />
+      <Row
+        title="등골이 서늘해지는 호러 영화"
+        id="HM"
+        fetchUrl={requests.fetchHorrorMovies}
+      />
+      <Footer />
     </div>
   );
 }
