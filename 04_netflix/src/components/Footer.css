@@ -1,0 +1,36 @@
+footer {
+  color: grey;
+  margin: 8vw 0 1vw 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(6, 30px);
+}
+
+.footer-grid-item {
+  display: flex;
+  font-size: 13px;
+  font-weight: 300;
+  height: 5vw;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7vw;
+  font-size: 10px;
+  font-weight: 200;
+}
+
+@media (min-width: 800px) {
+  /* grid 2개 */
+  .footer-grid {
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: repeat(3, 30px);
+  }
+}
