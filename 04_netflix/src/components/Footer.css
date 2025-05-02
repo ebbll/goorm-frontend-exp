@@ -17,6 +17,7 @@ footer {
   font-size: 13px;
   font-weight: 300;
   height: 5vw;
+  cursor: pointer;
 }
 
 .footer-info {
