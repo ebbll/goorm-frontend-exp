@@ -12,7 +12,7 @@ h2 {
   position: relative;
   display: flex;
   flex-direction: row;
-  margin-bottom: 7vw;
+  margin-bottom: 3vw;
 }
 .slider_arrow-left {
   background-clip: content-box;
