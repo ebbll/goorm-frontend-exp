@@ -1,9 +1,13 @@
 import "./Nav.css";
+import { useNavigate } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
 
 export default function Nav() {
   const [show, setShow] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+
+  const nav = useNavigate();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -18,6 +22,11 @@ export default function Nav() {
     };
   }, []);
 
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+    nav(`/search?q=${e.target.value}`);
+  };
+
   return (
     <nav className={`nav ${show ? "nav_black" : ""}`}>
       <div className="nav_left">
@@ -25,7 +34,7 @@ export default function Nav() {
           alt="Netflix Logo"
           src="/src/assets/netflix-logo.png"
           className="nav_logo"
-          onClick={() => window.location.reload()}
+          onClick={() => (window.location.href = "/")}
         />
         <ul className="nav_menu">
           <li className="nav_menu_item">홈</li>
@@ -38,23 +47,18 @@ export default function Nav() {
         </ul>
       </div>
       <div className="nav_right">
-        <ul className="nav_avatar_menu">
-          <li>
-            <img
-              alt="User logged"
-              src="/src/assets/netflix-avatar.jpg"
-              className="nav_avatar"
-            />
-            <ul className="depth_1">
-              <li className="nav_avatar_menu_item">프로필 관리</li>
-              <li className="nav_avatar_menu_item">프로필 이전</li>
-              <li className="nav_avatar_menu_item">계정</li>
-              <li className="nav_avatar_menu_item">고객 센터</li>
-              <hr />
-              <li className="nav_avatar_menu_item">넷플릭스에서 로그아웃</li>
-            </ul>
-          </li>
-        </ul>
+        <input
+          value={searchValue}
+          onChange={handleChange}
+          className="nav_input"
+          type="text"
+          placeholder="제목, 사람, 장르"
+        />
+        <img
+          alt="User logged"
+          src="/src/assets/netflix-avatar.jpg"
+          className="nav_avatar"
+        />
       </div>
     </nav>
   );

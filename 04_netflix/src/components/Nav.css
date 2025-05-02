@@ -27,6 +27,7 @@ nav {
   height: 2.5vw;
   line-height: 2.5vw;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .nav_menu {
@@ -122,11 +123,14 @@ nav {
 
 .nav_input {
   position: fixed;
-  left: 50%;
+  left: 70vw;
   transform: translate(-50%, 0);
-  background-color: rgba(0, 0, 0, 0.582);
+  background-color: rgba(20, 20, 20, 0.582);
   border-radius: 5px;
   color: white;
-  padding: 5px;
   border: none;
+  width: 20vw;
+  font-size: 1vw;
+  height: 2vw;
+  padding: 0.2vw;
 }
